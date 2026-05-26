@@ -21,5 +21,15 @@ test('add to cart', async ({ page }) => {
   await page.locator('button.btn_primary.btn_inventory').click();
   await page.pause();
 });
+ test('remove from cart', async ({ page }) => {
+  await page.goto('https://saucedemo.com/');
+  await page.locator('#user-name').fill('standard_user');
+  await page.locator('#password').fill('secret_sauce');
+  await page.locator('#login-button').click();
+  await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+  await page.locator('div.inventory_item_name').first().click();
+  await page.locator('button.btn_primary.btn_inventory').click();
+  await page.pause();
+});
 
 
