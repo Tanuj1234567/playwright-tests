@@ -58,3 +58,20 @@ test('checkout',async({ page }) => {
   await page.locator('button.btn_primary.btn_inventory').click();
   await page.pause();
 });
+test('checkout',async({ page }) => {
+  await page.goto('https://saucedemo.com/checkout-step-one.html');
+  await page.locator('#first-name').fill('John');
+  await page.locator('#last-name').fill('Doe');
+  await page.locator('#postal-code').fill('12345');
+  await page.locator('#continue').click();
+    await page.pause();
+});
+test('checkout',async({ page }) => {
+  await page.goto('https://saucedemo.com/checkout-step-two.html');
+  await page.locator('#finish').click();
+  await page.pause();
+});
+test('checkout',async({ page }) => {
+  await page.goto('https://saucedemo.com/checkout-complete.html');
+  await page.pause();
+});
