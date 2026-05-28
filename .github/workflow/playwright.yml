@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - login-feature
+      - playwright-local
 
   pull_request:
     branches:
